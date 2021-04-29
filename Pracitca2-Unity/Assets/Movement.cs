@@ -31,6 +31,7 @@ public class Movement : MonoBehaviour
         }
         if(click == 1 && P.x < Distancia)
         {
+            V.y = V.y + A.y * Time.deltaTime;
             time = time + Time.deltaTime;
             P.x = V.x * time;
             P.y = 5 + (0.5f)*A.y*Mathf.Pow(time, 2);
@@ -38,6 +39,7 @@ public class Movement : MonoBehaviour
             print("Posición: " + P);
             print("Velocidad: " + V);
             print("Tiempo: " + time);
+            print("Caída vertical: " + (5 - P.y));
         }
     }
 }
